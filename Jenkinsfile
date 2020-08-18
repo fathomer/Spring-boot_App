@@ -1,14 +1,24 @@
 pipeline{
     agent any
     stages{
-        stage('Checkout'){
-            steps {
-                checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/fathomer/Spring-boot_App.git']]])
-            }
-        }
         stage('Build'){
             steps {
-                echo "Hey"
+                echo "Build"
+            }
+        }
+        stage('Archive'){
+            steps {
+                echo "Archive"
+            }
+        }
+        stage('Publish JUnit'){
+            steps {
+                echo "Publish JUnit"
+            }
+        }
+        stage('Publish HTML'){
+            steps {
+                echo "Publishh HTML"
             }
         }
     }
